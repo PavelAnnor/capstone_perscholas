@@ -18,8 +18,8 @@ export default function Home(){
             </div>
           </section>
 
-          <section className="bg-red-400 h-full w-1/2 flex">
-            <img src= "./test.png"></img>
+          <section className="bg-black h-full w-1/2 flex">
+            <img src= "./home1.png"></img>
           </section>
         </div>
       </main>
