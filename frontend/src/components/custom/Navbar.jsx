@@ -15,7 +15,7 @@ export default function Navbar({links}){
 
 
     return (
-      <nav className="border-4 w-full h-[12vh] border-green-600 flex  justify-between pl-10 pr-10">
+      <nav className="border-4 w-full h-[12vh] border-green-600 flex  justify-between pl-10 pr-10 z-50">
         <div className="flex h-full border-4 border-red-500 flex items-center ">
           <h1>Logo Name </h1>
         </div>
