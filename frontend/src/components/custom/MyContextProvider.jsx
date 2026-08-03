@@ -4,7 +4,7 @@ import { useContext,useState } from "react"
 import ThemeContext from "../../context/themeContext.js"
 
 
-
+//A component that aggregates all context into one wrapper.
 export default function MyContextProvider(props){
 
 

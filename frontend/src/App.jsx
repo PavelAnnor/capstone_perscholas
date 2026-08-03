@@ -1,23 +1,32 @@
 //Import Components
-import { Button } from "@/components/ui/button";
+
+//Shadcc
+
+//Custom Components
+import MyContextProvider from "./components/custom/MyContextProvider.jsx";
+import Navbar from "./components/custom/Navbar.jsx";
 
 
-import MyContextProvider from "./components/custom/MyContextProvider";
 
-import Navbar from "./components/custom/Navbar";
-
-
+//Page Imports 
+import Home from "./pages/Home.jsx";
 
 //Node Module Imports
 import { Route,Routes } from "react-router";
+
+
+//Importing any important data
+import { navbarLinks } from "./data/navbarLinks";
 
 
 
 function App() {
   return (
     <MyContextProvider>
-      <Navbar></Navbar>
-      <Routes></Routes>
+      <Navbar links = {navbarLinks}></Navbar>
+      <Routes>
+        <Route path="/" element={<Home></Home>}></Route>
+      </Routes>
     </MyContextProvider>
   );
 }
