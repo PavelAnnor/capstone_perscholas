@@ -15,17 +15,25 @@ export default function Navbar({links}){
 
 
     return (
-      <nav className="border-4 w-full h-[12vh] border-green-600 flex  justify-between pl-10 pr-10 z-50">
-        <div className="flex h-full border-4 border-red-500 flex items-center ">
+      <nav className="border-1 w-full h-[12vh]  flex  justify-between pl-10 pr-10 z-50 text-white bg-[#0c0c0c] border-[#040e2e]">
+        <div className="flex h-full flex items-center gap-5 ">
           <h1>Logo Name </h1>
-        </div>
-
-        <div className="flex h-full border-2 border-blue-500 flex items-center p-0 gap-2">
           {links.map((l) => (
-            <Link to={l.href} className="" key = {l.text}>
-              <Button size= "lg" className="h-10">{l.text}</Button>
+            <Link to={l.href} className="" key={l.text}>
+              <Button size="lg" className="h-11 border-[white] bg-blue-600">
+                {l.text}
+              </Button>
             </Link>
           ))}
+        </div>
+
+        <div className="flex h-full  flex items-center p-0 gap-5">
+          <Button size="lg" className="h-11 border-[white] bg-[#050579]">
+            Login
+          </Button>
+          <Button size="lg" className="h-11 border-[white] bg-[#050579]">
+            Register
+          </Button>
         </div>
       </nav>
     );
