@@ -11,7 +11,7 @@ export default function Navbar({links}){
 
 
     //state variable and setter function used to change color theme
-    const { colorTheme, setColorTheme,toggleColorTheme,bodyRef } = useContext(ThemeContext)
+    const { colorTheme, setColorTheme,toggleColorTheme} = useContext(ThemeContext)
 
 
     const themeSwitchRef = useRef(null)
@@ -36,7 +36,7 @@ export default function Navbar({links}){
             <Link to={l.href} className="" key={l.text}>
               <Button
                 size="lg"
-                className="h-11 border-[var(--border-primary)] bg-[var(--bg-button-blue-primary)]"
+                className="h-11 border-[var(--border-primary)] bg-[var(--bg-button-blue-primary)] text-[var(--text-color-primary)]"
               >
                 {l.text}
               </Button>
@@ -44,16 +44,16 @@ export default function Navbar({links}){
           ))}
         </div>
 
-        <div className="flex h-full  flex items-center p-0 gap-5">
+        <div className="flex h-full  flex items-center p-0 gap-5 ">
           <Button
             size="lg"
-            className="h-11 border-[var(--border-primary)] bg-[var(--bg-button-blue-secondary)]"
+            className="h-11 border-[var(--border-primary)] bg-[var(--bg-button-blue-secondary)] text-[var(--text-color-primary)]"
           >
             Login
           </Button>
           <Button
             size="lg"
-            className="h-11 border-[var(--border-primary)] bg-[var(--bg-button-blue-secondary)]"
+            className="h-11 border-[var(--border-primary)] bg-[var(--bg-button-blue-secondary)] text-[var(--text-color-primary)]"
           >
             Register
           </Button>
@@ -63,7 +63,9 @@ export default function Navbar({links}){
             onCheckedChange={handleSwitch}
             defaultChecked={true}
           ></Switch>
-          <Label htmlFor="themeSwitch">Toggle Mode</Label>
+          <Label htmlFor="themeSwitch">
+            {colorTheme === "dark" ? "Dark" : "Light"}
+          </Label>
         </div>
       </nav>
     );

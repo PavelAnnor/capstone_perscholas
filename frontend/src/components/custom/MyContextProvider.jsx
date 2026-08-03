@@ -12,6 +12,7 @@ export default function MyContextProvider(props){
     //Provides a state varibale and a function used to toggle between light and dark mode
     const [colorTheme,setColorTheme]= useState("dark")
 
+    //reference to the div that wrappes everything in my app, Ill toggle the class list on it to change between light and dark mode
     const bodyRef = useRef()
     function toggleColorTheme(){
         if(colorTheme==="dark"){

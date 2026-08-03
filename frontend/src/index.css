@@ -87,15 +87,16 @@
     /* My Styles */
     --bg-primary: #000000;
     --text-color-primary: #ffffff;
+    --text-blue-primary: rgb(89, 89, 249);
 
 
     --bg-button-blue-primary:#165DFC;
     --bg-button-blue-secondary:blue;
-    --text-blue-primary:blue;
+    
 
 
     --border-primary:white;
-    
+
 }
 
 .dark {
@@ -137,6 +138,11 @@
 .lightTheme{
   --bg-primary: #ffffff;
   --text-color-primary: #000000;
+
+
+  
+  --border-primary: rgb(0, 0, 0);
+       
 
 }
 
