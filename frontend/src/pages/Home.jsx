@@ -4,7 +4,7 @@ export default function Home(){
 
 
     return (
-      <main className="w-full aspect-5/3 bg-[url('/backgrounds/mayuri_background.jpg')] bg-cover bg-center bg-no-repeat flex items-center justify-center z-0">
+      <main className="w-full aspect-6/3 bg-[url('/backgrounds/mayuri_background.jpg')] bg-cover bg-center bg-no-repeat flex items-center justify-center z-0">
         <div className="bg-black w-[93%] h-[93%] relative flex  z-1">
           <h1 className="absolute top-3/10  text-[#38383870]  text-9xl z-3">
             ANGA DEXdfsd
