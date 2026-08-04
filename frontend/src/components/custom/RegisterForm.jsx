@@ -1,5 +1,6 @@
 import { Button } from "../ui/button.jsx";
-import { useEffect, useRef,useContext,useNavigate } from "react";
+import { useEffect, useRef,useContext} from "react";
+import { useNavigate } from "react-router";
 
 import { createUser } from "../../util/database.js";
 import UserContext from "../../context/userContext.jsx";
@@ -9,7 +10,7 @@ export default function RegisterForm() {
   //DOM Reference to the form
    const formRef = useRef();
 
-  
+    const navigate = useNavigate();
 
    //Get the state varible for user and the setter function 
    const {user,setUser} = useContext(UserContext)
@@ -27,6 +28,7 @@ export default function RegisterForm() {
      if(response){
        setUser(response);
        alert("Able to Create User")
+       navigate("/", { replace: true });
      }
 
      if(!response)

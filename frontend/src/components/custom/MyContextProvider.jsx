@@ -1,5 +1,5 @@
 
-import { useContext,useState,useRef } from "react"
+import { useContext,useState,useRef,useEffect } from "react"
 
 import ThemeContext from "../../context/themeContext.js"
 
@@ -15,12 +15,26 @@ export default function MyContextProvider(props){
 
 
 
+
+
+
     //Provides a state varibale and a function used to toggle between light and dark mode
     const [colorTheme,setColorTheme]= useState("dark")
 
 
     //Provides a state varibale that represents the user and their data
     const [user,setUser] = useState(null)
+
+
+      useEffect(
+
+        ()=>{
+           if(user){
+             console.log("USer Logging in ");
+           }
+        },
+        [user]
+      );
 
     //reference to the div that wrappes everything in my app, Ill toggle the class list on it to change between light and dark mode
     const bodyRef = useRef()

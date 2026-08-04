@@ -2,6 +2,8 @@ import { Button } from "../ui/button.jsx";
 
 import { useEffect, useRef,useContext } from "react";
 
+import { useNavigate } from "react-router";
+
 import UserContext from "../../context/userContext.jsx";
 
 import { loginUser } from "../../util/database.js";
@@ -15,6 +17,9 @@ export default function LoginForm() {
     const ref1 = useRef()
     const ref2 = useRef()
 
+
+    //Hook used to navigate pack to home page after successful log in 
+    const navigate = useNavigate()
 
     async function handleSubmit(e){
 
@@ -31,6 +36,7 @@ export default function LoginForm() {
       }
      
         alert("Log in Attempt Successful!");
+        navigate("/", { replace: true });
         setUser(x);
   
 
