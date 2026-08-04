@@ -19,16 +19,7 @@ async function getAllUsers(req,res){
 
 }
 
-//Gets a specific user's info from the Database
-async function getUser (req,res) {
 
-    try {
-        
-    } catch (error) {
-        
-    }
-    
-}
 
 
 
@@ -51,4 +42,19 @@ async function createUser(req,res) {
 }
 
 
-export { getAllUsers, createUser };
+async function getUser(req,res) {
+
+    try {
+        const q = req.body
+        const result  = await UserModel.findOne(q)
+        res.status(200).send(result)
+        
+    } catch (error) {
+         res.status(400).send(false);
+        
+    }
+    
+}
+
+
+export { getAllUsers, createUser ,getUser};

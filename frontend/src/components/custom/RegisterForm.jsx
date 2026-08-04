@@ -1,5 +1,5 @@
 import { Button } from "../ui/button.jsx";
-import { useEffect, useRef,useContext } from "react";
+import { useEffect, useRef,useContext,useNavigate } from "react";
 
 import { createUser } from "../../util/database.js";
 import UserContext from "../../context/userContext.jsx";
@@ -9,28 +9,15 @@ export default function RegisterForm() {
   //DOM Reference to the form
    const formRef = useRef();
 
+  
+
    //Get the state varible for user and the setter function 
    const {user,setUser} = useContext(UserContext)
 
-   useEffect(() => {
-     async function testData() {
-       const result = await fetch("http://localhost:3000/users");
-       const x = await result.json();
-       console.log(x);
-     }
-     testData();
-   }, []);
-
-
-   
-
-
   
-
    //function to submit a user to the database when the form is submitted
    async function handleSubmit(e) {
      e.preventDefault();
-     console.log("Trying to Submit Data");
      const formData = new FormData(formRef.current);
      const userData = Object.fromEntries(formData.entries());
      const submissionData = {"firstName":userData.firstName,"lastName":userData.lastName,"username":userData.username, "email":userData.email, "password":userData.password}
