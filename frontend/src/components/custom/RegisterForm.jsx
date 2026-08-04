@@ -1,11 +1,16 @@
 import { Button } from "../ui/button.jsx";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef,useContext } from "react";
 
 import { createUser } from "../../util/database.js";
+import UserContext from "../../context/userContext.jsx";
 
 export default function RegisterForm() {
 
+  //DOM Reference to the form
    const formRef = useRef();
+
+   //Get the state varible for user and the setter function 
+   const {user,setUser} = useContext(UserContext)
 
    useEffect(() => {
      async function testData() {
@@ -19,19 +24,33 @@ export default function RegisterForm() {
 
    
 
+
   
 
    //function to submit a user to the database when the form is submitted
    async function handleSubmit(e) {
      e.preventDefault();
-     console.log("Subitting");
+     console.log("Trying to Submit Data");
      const formData = new FormData(formRef.current);
      const userData = Object.fromEntries(formData.entries());
-     const submissionData = {"firstName":userData.firstName,"lastName":userData.lastName, "email":userData.email, "password":userData.password}
-     await createUser(submissionData)
-     console.log(userData,submissionData)
-    
+     const submissionData = {"firstName":userData.firstName,"lastName":userData.lastName,"username":userData.username, "email":userData.email, "password":userData.password}
+     const response = await createUser(submissionData)
+
+     //if the request is good and I dont get sent back false, change the state variable
+     if(response){
+       setUser(response);
+       alert("Able to Create User")
+     }
+
+     if(!response)
+      alert("Unable to create User")
+
+
+     
+     
    }
+
+
   return (
     <div className=" w-1/2 m-auto border-[#525252] border-1">
       <div className="w-1/1 flex border-b-2 ">
@@ -50,6 +69,13 @@ export default function RegisterForm() {
           placeholder="Last Name"
           className="border-b-2 p-3 pl-0 focus:outline-none focus:border-[#A00CF3]"
           name="lastName"
+          required
+        ></input>
+
+        <input
+          placeholder="Username"
+          className="border-b-2 p-3 pl-0 focus:outline-none focus:border-[#A00CF3]"
+          name="username"
           required
         ></input>
 
@@ -74,8 +100,13 @@ export default function RegisterForm() {
           required
         ></input>
 
-        <Button size="lg" className="bg-[#A00CF3]" onClick={handleSubmit} type = "submit">
-         Create Account
+        <Button
+          size="lg"
+          className="bg-[#A00CF3]"
+          onClick={handleSubmit}
+          type="submit"
+        >
+          Create Account
         </Button>
       </form>
     </div>

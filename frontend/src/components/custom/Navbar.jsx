@@ -1,5 +1,6 @@
 import { useContext ,useRef} from "react"
 import ThemeContext from "../../context/themeContext"
+import UserContext from "../../context/userContext.jsx";
 import {Button} from "../ui/button.jsx"
 import { Switch } from "@/components/ui/switch";
 import { Label } from "@/components/ui/label";
@@ -12,6 +13,7 @@ export default function Navbar({links}){
 
     //state variable and setter function used to change color theme
     const { colorTheme, setColorTheme,toggleColorTheme} = useContext(ThemeContext)
+     const { user, setUser } = useContext(UserContext);
 
 
     const themeSwitchRef = useRef(null)
@@ -45,22 +47,29 @@ export default function Navbar({links}){
         </div>
 
         <div className="flex h-full  flex items-center p-0 gap-5 ">
-          <Link to="/login">
-            <Button
-              size="lg"
-              className="h-11 border-[var(--border-primary)] bg-[var(--bg-button-blue-secondary)] text-[var(--text-color-primary)]"
-            >
-              Login
-            </Button>
-          </Link>
-          <Link to = "/register">
-            <Button
-              size="lg"
-              className="h-11 border-[var(--border-primary)] bg-[var(--bg-button-blue-secondary)] text-[var(--text-color-primary)]"
-            >
-              Register
-            </Button>
-          </Link>
+          {!user && (
+            <>
+              <Link to="/login">
+                <Button
+                  size="lg"
+                  className="h-11 border-[var(--border-primary)] bg-[var(--bg-button-blue-secondary)] text-[var(--text-color-primary)]"
+                >
+                  Login
+                </Button>
+              </Link>
+              <Link to="/register">
+                <Button
+                  size="lg"
+                  className="h-11 border-[var(--border-primary)] bg-[var(--bg-button-blue-secondary)] text-[var(--text-color-primary)]"
+                >
+                  Register
+                </Button>
+              </Link>
+            </>
+          )}
+
+          {user && <h2>Welcome {user.username}!</h2>}
+
           <Switch
             id="themeSwitch"
             ref={themeSwitchRef}

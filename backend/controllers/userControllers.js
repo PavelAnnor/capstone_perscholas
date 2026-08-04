@@ -31,13 +31,20 @@ async function getUser (req,res) {
 }
 
 
+
+//Function to create a user in the database
 async function createUser(req,res) {
 
     try {
     const result = await UserModel.create(req.body);
-    res.send(result);
+  
+    //if user was made correclty, send an object jack with the data for that user, including the _id
+    res.status(200).send(result);
         
     } catch (error) {
+
+        //if the user is unable to be created, return a status code of 400 and false
+        res.status(400).send(false)
         
     }
     
