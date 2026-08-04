@@ -1,12 +1,15 @@
+//Importing important modules and functions
 import express from "express"
 import cors from "cors"
 import connectDB from "./conn.js";
-
 import mongoose from "mongoose";
 
 
 //importing models
 import UserModel from "./models/userModel.js"
+
+//Importing Routes
+import userRoutes from "./routes/userRoutes.js"
 
 const app = express()
 const PORT = process.env.PORT || 3000;
@@ -14,6 +17,7 @@ const PORT = process.env.PORT || 3000;
 
 const allowedOrigins = ["http://localhost:5173"];
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 
 app.use(
@@ -24,10 +28,7 @@ app.use(
   }),
 );
 
-app.get("/", async (req,res)=>{
-  const response = await UserModel.find({})
-  res.send(response)
-})
+app.use("/users",userRoutes)
 
 
 app.listen(PORT,()=>{
