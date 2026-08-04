@@ -33,7 +33,9 @@ export default function MyContextProvider(props){
       <ThemeContext.Provider
         value={{ colorTheme, setColorTheme, toggleColorTheme, bodyRef }}
       >
-        <div ref={bodyRef}>{props.children}</div>
+        <div className="bg-[var(--bg-primary)]" ref={bodyRef}>
+          {props.children}{" "}
+        </div>
       </ThemeContext.Provider>
     );
 }

@@ -1,6 +1,11 @@
 import { Button } from "../components/ui/button.jsx";
 import { useContext } from "react";
 import ThemeContext from "../context/themeContext.js";
+
+
+import Hero from "../components/custom/Hero.jsx";
+import Features from "../components/custom/Features.jsx";
+
 export default function Home(){
 
 
@@ -9,36 +14,14 @@ export default function Home(){
 
 
     return (
-      <main className="w-full aspect-6/3 bg-[url('/backgrounds/mayuri_background.jpg')] bg-cover bg-center bg-no-repeat flex items-center justify-center z-0">
-        <div className="bg-[var(--bg-primary)] w-[93%] h-[93%] relative flex  z-1 border-[var(--border-primary)] border">
-          <h1 className="absolute top-25/100  text-[#38383870]  text-9xl z-3">
-            ANGA DEXdfsd
-          </h1>
+      <div className="bg-[var(--bg-primary)]">
+        <Hero
+          mainText="Lorem Ipsumn yuri No"
+          subText="Yama nozi yoi ku tor"
+        ></Hero>
+        <Features></Features>
 
-          <section className=" h-full w-45/100  flex items-center pl-10 z-4">
-            <div className="">
-              <h1 className="mt-auto text-7xl mb-3 relative z-5 text-[var(--text-blue-primary)]">
-                Lorem ipsum dolor sit amet
-              </h1>
-              <h2 className="text-3xl text-[var(--text-color-primary)]">
-                ipsum dolor sit amet
-              </h2>
-              <Button className="mt-5 text-white" size="lg">
-                Get Started
-              </Button>
-            </div>
-          </section>
-
-          <section className="h-full w-55/100 flex  z-4">
-            {colorTheme === "dark" && (
-              <img src="./panel(dark).png" className="w-full "></img>
-            )}
-
-            {colorTheme === "light" && (
-              <img src="./panel(light).png" className="w-full "></img>
-            )}
-          </section>
-        </div>
-      </main>
+        
+      </div>
     );
 }
