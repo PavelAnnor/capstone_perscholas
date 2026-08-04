@@ -11,6 +11,7 @@ import Navbar from "./components/custom/Navbar.jsx";
 //Page Imports 
 import Home from "./pages/Home.jsx";
 import Login from "./pages/Login.jsx";
+import Register from "./pages/Register.jsx";
 
 //Node Module Imports
 import { Route,Routes } from "react-router";
@@ -29,7 +30,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home></Home>}></Route>
         <Route path="/login" element={<Login></Login>}></Route>
-        <Route path="/register"> </Route>
+        <Route path="/register" element={<Register></Register>}> </Route>
       </Routes>
     </MyContextProvider>
   );

@@ -164,3 +164,7 @@
     @apply font-sans;
     }
 }
+
+html{
+  background-color: #000000;
+}

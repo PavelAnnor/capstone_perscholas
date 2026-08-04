@@ -45,18 +45,22 @@ export default function Navbar({links}){
         </div>
 
         <div className="flex h-full  flex items-center p-0 gap-5 ">
-          <Button
-            size="lg"
-            className="h-11 border-[var(--border-primary)] bg-[var(--bg-button-blue-secondary)] text-[var(--text-color-primary)]"
-          >
-            Login
-          </Button>
-          <Button
-            size="lg"
-            className="h-11 border-[var(--border-primary)] bg-[var(--bg-button-blue-secondary)] text-[var(--text-color-primary)]"
-          >
-            Register
-          </Button>
+          <Link to="/login">
+            <Button
+              size="lg"
+              className="h-11 border-[var(--border-primary)] bg-[var(--bg-button-blue-secondary)] text-[var(--text-color-primary)]"
+            >
+              Login
+            </Button>
+          </Link>
+          <Link to = "/register">
+            <Button
+              size="lg"
+              className="h-11 border-[var(--border-primary)] bg-[var(--bg-button-blue-secondary)] text-[var(--text-color-primary)]"
+            >
+              Register
+            </Button>
+          </Link>
           <Switch
             id="themeSwitch"
             ref={themeSwitchRef}
