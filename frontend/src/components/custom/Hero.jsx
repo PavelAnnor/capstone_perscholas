@@ -12,18 +12,16 @@ export default function Hero() {
   return (
     <SectionWrapper>
     <main className="bg-[var(--bg-primary)] w-[100%] h-[100%] relative flex  aspect-6/3">
-      <h1 className="absolute top-25/100  text-[#38383870]  text-9xl z-3">
-        ANGA DEXdfsd
-      </h1>
+     
 
       <section className=" h-full w-45/100  flex items-center  z-4">
         <div className="">
           <h1 className="mt-auto text-7xl mb-3 relative z-5 text-[var(--text-blue-primary)]">
-            Your Second Brain
+            Your Second Brain 
           </h1>
           <h2 className="text-3xl text-[var(--text-color-primary)]">
-            Establish reading lists, notes, and tasks for your readinign all in
-            one place.
+            Create reading lists, notes, and track progress, all in one cnetralized application.
+            
           </h2>
           <Button
             className="mt-5 text-white bg-[var(--bg-button-blue-primary)]"
