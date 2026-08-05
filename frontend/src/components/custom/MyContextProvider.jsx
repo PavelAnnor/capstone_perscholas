@@ -25,6 +25,8 @@ export default function MyContextProvider(props){
     //Provides a state varibale that represents the user and their data
     const [user,setUser] = useState(null)
 
+    
+
 
       useEffect(
 

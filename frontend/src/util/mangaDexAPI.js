@@ -67,8 +67,8 @@ function extractMangaInfo(mangaObject){
       title: title ? title : "N/A",
       description: description ? description : "N/A",
       year: year ? year : "N/A",
-      volumes: vol ? vol : "N/A",
-      chapters: chap ? chap : "N/A",
+      volumes: vol ? vol : 0,
+      chapters: chap ? chap : 0,
       cover_id: extractCoverID(mangaObject)
         ? extractCoverID(mangaObject)
         : "N/A",

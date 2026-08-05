@@ -20,7 +20,7 @@ export default function SearchResultsCard({data}){
     //(really complciated for no reason)
     const fileName = await getMangaCoverArtFileName(e.cover_id)
     const submission = {
-      userId: user._id,
+      userId: user._id ,
       mangaDexId: e.id,
       title: e.title,
       description: e.description,
@@ -29,7 +29,13 @@ export default function SearchResultsCard({data}){
       cover: `https://uploads.mangadex.org/covers/${e.id}/${fileName}`,
     };
     
-    await createMangaSubmission(submission)
+    
+    const x = await createMangaSubmission(submission)
+
+    if(x){
+      //add logic to uda
+    }
+
 
   }
 
