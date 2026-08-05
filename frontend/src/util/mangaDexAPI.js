@@ -137,4 +137,4 @@ function getMangaCoverArt(mangaId, fileName){
 
 
 
-export{getManga,getOneManga,extractMangaInfo}
+export{getManga,getOneManga,extractMangaInfo,getMangaCoverArtFileName}

@@ -3,12 +3,41 @@ import { Button } from "../ui/button.jsx";
 import { useContext } from "react";
 import UserContext from "../../context/userContext.jsx";
 
+import {getMangaCoverArtFileName} from "../../util/mangaDexAPI.js"
+import {createMangaSubmission} from "../../util/database.js"
+
 
 export default function SearchResultsCard({data}){
 
+  const {user} = useContext(UserContext)
+
+  //function that will asssemlbe all the info i need to send in a post request to 
+  //add a submission
+  async function handleSubmission(){
+
+
+    //have to make another call to the API to get a filename which is used in conjuctuion with manga id to get the cover art 
+    //(really complciated for no reason)
+    const fileName = await getMangaCoverArtFileName(e.cover_id)
+    const submission = {
+      userId: user._id,
+      mangaDexId: e.id,
+      title: e.title,
+      description: e.description,
+      volumes: e.volumes,
+      chapters: e.chapters,
+      cover: `https://uploads.mangadex.org/covers/${e.id}/${fileName}`,
+    };
+    
+    await createMangaSubmission(submission)
+
+  }
+
+
+
     const e = extractMangaInfo(data)
 
-    console.log(e.tags)
+   
     
 
     return (
@@ -23,7 +52,7 @@ export default function SearchResultsCard({data}){
         <p>Chapters: {e.chapters}</p>
         <Tags tags={e.tags}></Tags>
         <div className="flex">
-          <Button className="bg-[#6d078c] text-black" size="lg">
+          <Button className="bg-[#6d078c] text-black" size="lg" onClick = {handleSubmission}>
             Add to Your List
           </Button>
           <Button className="bg-[#ffffff] text-black ml-3" size="lg">

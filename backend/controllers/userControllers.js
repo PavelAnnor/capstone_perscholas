@@ -47,6 +47,7 @@ async function getUser(req,res) {
     try {
         const q = req.body
         const result  = await UserModel.findOne(q)
+        console.log(result)
         res.status(200).send(result)
         
     } catch (error) {

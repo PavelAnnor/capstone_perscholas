@@ -10,6 +10,7 @@ import UserModel from "./models/userModel.js"
 
 //Importing Routes
 import userRoutes from "./routes/userRoutes.js"
+import mangaSubmissionRoutes from "./routes/mangaSubmissionRoutes.js"
 
 const app = express()
 const PORT = process.env.PORT || 3000;
@@ -36,6 +37,7 @@ app.use((req, res, next) => {
 });
 
 app.use("/users",userRoutes)
+app.use("/manga-submission",mangaSubmissionRoutes)
 
 
 
