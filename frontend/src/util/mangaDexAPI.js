@@ -15,12 +15,11 @@ async function getManga(title) {
         if(data.length===0){
             return []
         }
-         console.log(data);
          return data;
         
     } catch (error) {
 
-        return false
+        return [];
         
     }  
 }
@@ -62,19 +61,15 @@ function extractMangaInfo(mangaObject){
 
     
 
-
-
-    
-    console.log({id:id,type:type,title:title,description:description,year:year,volumes:vol,chapters:chap, cover_id:extractCoverID(mangaObject)})
     return {
       id: id,
-      type: type,
-      title: title,
-      description: description,
-      year: year,
-      volumes: vol,
-      chapters: chap,
-      cover_id: extractCoverID(mangaObject),
+      type: type ?? "N/A",
+      title: title ?? "N/A",
+      description: description ?? "N/A",
+      year: year ?? "N/A",
+      volumes: vol ?? "N/A",
+      chapters: chap ?? "N/A",
+      cover_id: extractCoverID(mangaObject) ?? "N/A",
     };
 
 }

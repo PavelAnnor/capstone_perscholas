@@ -49,9 +49,7 @@ text,
         </div>
       </form>
 
-      <div className="w-80/10 border-4 auto mt-20 grid grid-cols-5">
-        {searchResults.length != 0 && <h1>We got something</h1>}
-      </div>
+     
     </main>
   );
 
