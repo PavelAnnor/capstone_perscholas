@@ -58,7 +58,7 @@ function extractMangaInfo(mangaObject){
     const year = a.year;
     const vol = a.lastVolume
     const chap = a.lastChapter
-
+    const tags = a.tags.map( t=> t.attributes.name.en)
     
 
     return {
@@ -72,6 +72,7 @@ function extractMangaInfo(mangaObject){
       cover_id: extractCoverID(mangaObject)
         ? extractCoverID(mangaObject)
         : "N/A",
+        tags: tags ? tags :[]
     };
 
 }

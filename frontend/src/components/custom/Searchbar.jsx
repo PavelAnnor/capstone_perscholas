@@ -41,7 +41,7 @@ text,
 
       
 
-      <form className="text-center flex w-1/2 m-auto  flex-col">
+      <form className="text-center flex w-1/2 m-auto  flex-col" onSubmit={(e)=>{e.preventDefault}}>
         <div className="border-1 p-4 ">
           <input
             className="w-full p-2 border border-transparent focus:border-blue-400 focus:outline-none text-2xl h-[12vh]"
