@@ -34,10 +34,12 @@ text,
 
 
   return (
-    <main className="w-full border-1 mt-20">
-      <h1 className="mt-auto text-6xl mb-3 relative z-5 text-[var(--text-blue-primary)] text-center">
+    <main className="w-full mt-20">
+      <h1 className="mt-auto text-6xl mb-5 relative z-5 text-[var(--text-blue-primary)] text-center">
         {text}
       </h1>
+
+      
 
       <form className="text-center flex w-1/2 m-auto  flex-col">
         <div className="border-1 p-4 ">

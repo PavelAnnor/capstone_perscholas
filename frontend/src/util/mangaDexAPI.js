@@ -63,13 +63,15 @@ function extractMangaInfo(mangaObject){
 
     return {
       id: id,
-      type: type ?? "N/A",
-      title: title ?? "N/A",
-      description: description ?? "N/A",
-      year: year ?? "N/A",
-      volumes: vol ?? "N/A",
-      chapters: chap ?? "N/A",
-      cover_id: extractCoverID(mangaObject) ?? "N/A",
+      type: type ? type : "N/A",
+      title: title ? title : "N/A",
+      description: description ? description : "N/A",
+      year: year ? year : "N/A",
+      volumes: vol ? vol : "N/A",
+      chapters: chap ? chap : "N/A",
+      cover_id: extractCoverID(mangaObject)
+        ? extractCoverID(mangaObject)
+        : "N/A",
     };
 
 }
@@ -93,7 +95,7 @@ function extractMangaInfo(mangaObject){
 //Helper Function to extract CoverID from a manga object
 function extractCoverID(mangaObject){
     const c = mangaObject.relationships.find((r) => r.type === "cover_art");
-    return c.id
+    return (c.id ? c.id :"N/A")
 }
 
 
