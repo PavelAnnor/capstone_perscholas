@@ -12,7 +12,7 @@ import Navbar from "./components/custom/Navbar.jsx";
 import Home from "./pages/Home.jsx";
 import Login from "./pages/Login.jsx";
 import Register from "./pages/Register.jsx";
-import Search from "./pages/Search.jsx";
+import SearchManga from "./pages/SearchManga.jsx";
 
 //Node Module Imports
 import { Route,Routes } from "react-router";
@@ -32,6 +32,7 @@ function App() {
         <Route path="/" element={<Home></Home>}></Route>
         <Route path="/login" element={<Login></Login>}></Route>
         <Route path="/register" element={<Register></Register>}> </Route>
+        <Route path = "/search-manga" element={<SearchManga></SearchManga>}></Route>
       </Routes>
     </MyContextProvider>
   );
