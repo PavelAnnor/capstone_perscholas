@@ -49,6 +49,7 @@ export default function RegisterForm() {
         <h2 className="text-4xl">Create Account</h2>
         <input
           placeholder="First Name"
+          type="text"
           className="border-b-2 p-3 pl-0 focus:outline-none focus:border-[#A00CF3]"
           name="firstName"
           required
@@ -56,6 +57,7 @@ export default function RegisterForm() {
 
         <input
           placeholder="Last Name"
+          type="text"
           className="border-b-2 p-3 pl-0 focus:outline-none focus:border-[#A00CF3]"
           name="lastName"
           required
@@ -63,6 +65,7 @@ export default function RegisterForm() {
 
         <input
           placeholder="Username"
+          type="text"
           className="border-b-2 p-3 pl-0 focus:outline-none focus:border-[#A00CF3]"
           name="username"
           required
@@ -70,6 +73,7 @@ export default function RegisterForm() {
 
         <input
           placeholder="Email Address"
+          type="email"
           className="border-b-2 p-3 pl-0 focus:outline-none focus:border-[#A00CF3]"
           name="email"
           required
@@ -77,17 +81,13 @@ export default function RegisterForm() {
 
         <input
           placeholder="Password"
+          type="text"
           className="border-b-2 p-3 pl-0 focus:outline-none focus:border-[#A00CF3]"
           name="password"
           required
         ></input>
 
-        <input
-          placeholder="Repeat Password"
-          className="border-b-2 p-3 pl-0 focus:outline-none focus:border-[#A00CF3]"
-          name="repeatPassword"
-          required
-        ></input>
+        
 
         <Button
           size="lg"

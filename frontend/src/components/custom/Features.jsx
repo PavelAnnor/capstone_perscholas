@@ -17,10 +17,10 @@ export default function Features(){
 
     return (
       <SectionWrapper>
-        <h1 className="mt-auto text-7xl mb-3 relative z-5 text-[var(--text-blue-primary)] ">
+        <h1 className="mt-auto text-6xl mb-3 relative z-5 text-[var(--text-blue-primary)] ">
           Availabe Features
         </h1>
-        <h2 className="text-3xl text-[var(--text-color-primary)] ">
+        <h2 className="text-xl text-[var(--text-color-primary)] ">
           Disover all you can do with MangaDex
         </h2>
 

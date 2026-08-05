@@ -12,6 +12,7 @@ import Navbar from "./components/custom/Navbar.jsx";
 import Home from "./pages/Home.jsx";
 import Login from "./pages/Login.jsx";
 import Register from "./pages/Register.jsx";
+import Search from "./pages/Search.jsx";
 
 //Node Module Imports
 import { Route,Routes } from "react-router";

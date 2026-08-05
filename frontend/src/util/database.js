@@ -42,7 +42,7 @@ async function loginUser(data){
      });
 
      //if the request was bad, return false
-     if (!x.ok) {
+     if (!x.ok || x.length ===0) {
        return false;
      }
      //if the request was good, parse the response to json so i can acess what the request sent back

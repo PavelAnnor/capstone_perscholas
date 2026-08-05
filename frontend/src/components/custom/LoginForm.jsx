@@ -30,10 +30,12 @@ export default function LoginForm() {
       const x = await loginUser(submissionData)
 
 
-      if(x.length===0){
+      if(!x){
         alert("Log in Attempt Unsccessful")
         return false;
       }
+
+
      
         alert("Log in Attempt Successful!");
         navigate("/", { replace: true });
@@ -58,6 +60,7 @@ export default function LoginForm() {
         <input
           placeholder="Email Address"
           className="border-b-2 p-3 pl-0 focus:outline-none focus:border-[#A00CF3]"
+          type = "email"
           required
           ref={ref1}
         ></input>
