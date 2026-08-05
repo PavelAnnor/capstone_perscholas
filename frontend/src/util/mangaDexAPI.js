@@ -4,13 +4,16 @@ async function getManga(title) {
 
     try {
 
+
+        if(!title)
+            return []
          const url = `https://api.mangadex.org/manga?title=${title}`;
          const response = await fetch(url);
          const result = await response.json();
          const data = result.data
 
         if(data.length===0){
-            return false
+            return []
         }
          console.log(data);
          return data;
