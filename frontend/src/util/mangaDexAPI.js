@@ -67,12 +67,12 @@ function extractMangaInfo(mangaObject){
       title: title ? title : "N/A",
       description: description ? description : "N/A",
       year: year ? year : "N/A",
-      volumes: vol ? vol : 0,
-      chapters: chap ? chap : 0,
+      volumes: vol ? vol : "N/A",
+      chapters: chap ? chap : "N/A",
       cover_id: extractCoverID(mangaObject)
         ? extractCoverID(mangaObject)
         : "N/A",
-        tags: tags ? tags :[]
+      tags: tags ? tags : [],
     };
 
 }

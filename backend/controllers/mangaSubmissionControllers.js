@@ -28,9 +28,23 @@ async function createSubmission(req,res){
 
 async function getUserSubmissions(req,res){
 
+
+
+    try {
+        const response = await MangaSubmissionModel.find({
+          userId: req.body.userId
+        });
+        res.status(200).send(response)
+        
+    } catch (error) {
+
+        res.status(400).send(false);
+        
+    }
+
 }
 
 
 
 
-export {createSubmission}
+export {createSubmission,getUserSubmissions}

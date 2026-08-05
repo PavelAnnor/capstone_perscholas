@@ -9,6 +9,10 @@ const mangaSubmissionSchema = mongoose.Schema({
     type: String,
     required: true,
   },
+  year:{
+    type: mongoose.Schema.Types.Mixed,
+    default: "N/A",
+  },
   title: {
     type: String,
     default: "N/A",
@@ -26,24 +30,24 @@ const mangaSubmissionSchema = mongoose.Schema({
     default: "N/A",
   },
   volumes: {
-    type: Number,
-    default: 0,
+    type: mongoose.Schema.Types.Mixed,
+    default: "N/A",
   },
   chapters: {
-    type: Number,
-    default: 0,
+    type: mongoose.Schema.Types.Mixed,
+    default: "N/A",
   },
   lastRead: {
     type: String,
     default: "N/A",
   },
   currentChapter: {
-    type: Number,
-    default: 0,
+    type: mongoose.Schema.Types.Mixed,
+    default: "N/A",
   },
   currentVolume: {
-    type: Number,
-    default: 0,
+    type: mongoose.Schema.Types.Mixed,
+    default: "N/A",
   },
 });
 
