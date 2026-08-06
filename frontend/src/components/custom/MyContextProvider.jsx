@@ -28,12 +28,20 @@ export default function MyContextProvider(props){
     
 
 
+    //use effect to render the users manga Library info when the log in 
       useEffect(
 
         ()=>{
-           if(user){
-             console.log("USer Logging in ");
-           }
+
+          //if we dont have a log in dont do anythign 
+          if(!user)
+            return
+
+
+          async function getUserData(){
+
+          } getUserData()
+
         },
         [user]
       );

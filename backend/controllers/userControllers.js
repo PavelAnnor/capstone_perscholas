@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import bcryptjs from "bcryptjs"
 
 
 import UserModel from "../models/userModel.js"
@@ -27,6 +28,13 @@ async function getAllUsers(req,res){
 async function createUser(req,res) {
 
     try {
+
+    //object destrucutre to grab thr password
+     const { password,username, firstName,lastName,email } = req.body;
+
+     //has the password with a salt of 10 (wtf does that mean look it up later)
+    //  const hashedPass = await bcryptjs.hash(password,10)
+
     const result = await UserModel.create(req.body);
   
     //if user was made correclty, send an object jack with the data for that user, including the _id
@@ -45,9 +53,15 @@ async function createUser(req,res) {
 async function getUser(req,res) {
 
     try {
-        const q = req.body
-        const result  = await UserModel.findOne(q)
-        console.log(result)
+        const {email,password} = req.body
+        const result  = await UserModel.findOne({email:email, password:password})
+
+        // const isValidPassword = await bcryptjs.compare(password,result.password)
+
+        // if(isValidPassword){
+        //     const token = generateUserToken()
+        // }
+    
         res.status(200).send(result)
         
     } catch (error) {

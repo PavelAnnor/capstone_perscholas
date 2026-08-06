@@ -1,5 +1,7 @@
 
 
+//function that makes a post request
+//Used for user registration
 async function createUser(data) {
 
 
@@ -27,7 +29,8 @@ async function createUser(data) {
     
 }
 
-
+//function that also makes a post request (so i can sned log in data in a body)
+//used for log in
 async function loginUser(data){
 
   try {
@@ -85,7 +88,29 @@ async function createMangaSubmission(data){
 }
 
 
-async function getUserData(){
+async function loadUserData(data){
+
+  try {
+    const x = await fetch(``, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
+
+    //if the request was bad, return false
+    if (!x.ok || x.length === 0) {
+      return false;
+    }
+    //if the request was good, parse the response to json so i can acess what the request sent back
+
+    return await x.json();
+  } catch (error) {
+
+    return false
+    
+  }
 
 }
 
