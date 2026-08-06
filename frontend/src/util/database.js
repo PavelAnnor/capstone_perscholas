@@ -91,7 +91,7 @@ async function createMangaSubmission(data){
 async function loadUserData(data){
 
   try {
-    const x = await fetch(``, {
+    const x = await fetch(`http://localhost:3000/manga-submission/getAllMangaPosts`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -115,4 +115,4 @@ async function loadUserData(data){
 }
 
 
-export {createUser,loginUser,createMangaSubmission}
+export {createUser,loginUser,createMangaSubmission,loadUserData}

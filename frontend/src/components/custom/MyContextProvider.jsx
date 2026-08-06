@@ -10,6 +10,9 @@ import  UserContext  from "../../context/userContext.jsx"
 import UserContextWrapper from "../../context/userContext.jsx"
 
 
+import { loadUserData } from "../../util/database.js"
+
+
 //A component that aggregates all context into one wrapper.
 export default function MyContextProvider(props){
 
@@ -25,6 +28,8 @@ export default function MyContextProvider(props){
     //Provides a state varibale that represents the user and their data
     const [user,setUser] = useState(null)
 
+    const [mangaLibrary,setMangaLibrary] = useState([])
+
     
 
 
@@ -37,8 +42,17 @@ export default function MyContextProvider(props){
           if(!user)
             return
 
-
           async function getUserData(){
+
+            const response = await loadUserData({
+              userId: user._id,
+            });
+
+            setMangaLibrary(response)
+
+            
+
+            
 
           } getUserData()
 
