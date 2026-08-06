@@ -23,7 +23,8 @@ export default function DashboardLibrary(){
             Manga Library
           </p>
           <div className="w-full grid grid-cols-6 border-green-600 border gap-5 p-5 ">
-            {mappedLibrary}
+            {mangaLibrary && mappedLibrary}
+            {mangaLibrary.length===0 && <h1 className="text-4xl text-center col-span-6">NOTHING TO SEE...</h1>}
           </div>
         </main>
       </SectionWrapper>

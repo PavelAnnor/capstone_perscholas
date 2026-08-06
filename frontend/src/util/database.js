@@ -62,7 +62,7 @@ async function loginUser(data){
 async function createMangaSubmission(data){
 
   try {
-
+  
      const x = await fetch("http://localhost:3000/manga-submission", {
        method: "POST",
        headers: {
@@ -85,6 +85,32 @@ async function createMangaSubmission(data){
     
   }
 
+}
+
+
+async function deleteMangaSubmission(data) {
+  try {
+    const x = await fetch(
+      "http://localhost:3000/manga-submission/deleteMangaPost",
+      {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      },
+    );
+
+    //if the request was bad, return false
+    if (!x.ok || x.length === 0) {
+      return false;
+    }
+    //if the request was good, parse the response to json so i can acess what the request sent back
+
+    return await x.json();
+  } catch (error) {
+    return false;
+  }
 }
 
 
@@ -115,4 +141,37 @@ async function loadUserData(data){
 }
 
 
-export {createUser,loginUser,createMangaSubmission,loadUserData}
+// async function findLastRead(data) {
+
+
+//   try {
+
+//     const x = await fetch(
+//       `http://localhost:3000/manga-submission/getAllMangaPosts`,
+//       {
+//         method: "POST",
+//         headers: {
+//           "Content-Type": "application/json",
+//         },
+//         body: JSON.stringify(data),
+//       },
+//     );
+
+//     //if the request was bad, return false
+//     if (!x.ok || x.length === 0) {
+//       return false;
+//     }
+//     //if the request was good, parse the response to json so i can acess what the request sent back
+
+//     return await x.json();
+    
+//   } catch (error) {
+
+//     return false
+    
+//   }
+  
+// }
+
+
+export {createUser,loginUser,createMangaSubmission,loadUserData,deleteMangaSubmission}

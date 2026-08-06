@@ -1,5 +1,6 @@
 import mongoose from "mongoose"
 
+
 const mangaSubmissionSchema = mongoose.Schema({
   userId: {
     type: String,
@@ -9,7 +10,7 @@ const mangaSubmissionSchema = mongoose.Schema({
     type: String,
     required: true,
   },
-  year:{
+  year: {
     type: mongoose.Schema.Types.Mixed,
     default: "N/A",
   },
@@ -38,8 +39,8 @@ const mangaSubmissionSchema = mongoose.Schema({
     default: "N/A",
   },
   lastRead: {
-    type: String,
-    default: "N/A",
+    type: Date,
+    default: Date.now,
   },
   currentChapter: {
     type: mongoose.Schema.Types.Mixed,
@@ -51,5 +52,10 @@ const mangaSubmissionSchema = mongoose.Schema({
   },
 });
 
+//helps with read opperations 
+mangaSubmissionSchema.index({ userId: 1, mangaDexId: 1 }, { unique: true });
+
+
 const MangaSubmissionModel = mongoose.model("MangaSubmissionModel", mangaSubmissionSchema, "manga_submissions")
 export default MangaSubmissionModel;
+
