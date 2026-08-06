@@ -32,4 +32,20 @@ async function editNote(params) {
 }
 
 
-export {createNote}
+async function getAllNotes(req,res) {
+
+    try {
+
+        const response = await NotesModel.find(req.body) 
+        res.status(200).send(response)
+        
+    } catch (error) {
+
+        res.status(400).send({error:error.message})
+        
+    }
+    
+}
+
+
+export {createNote,getAllNotes}

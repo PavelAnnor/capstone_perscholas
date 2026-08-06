@@ -1,10 +1,12 @@
 import express from "express"
-import { createNote } from "../controllers/notesControllers.js"
+import { createNote,getAllNotes } from "../controllers/notesControllers.js"
 
 const router = express.Router()
 
 
 router.route("/").post(createNote)
+
+router.route("/get-all-notes").post(getAllNotes)
 
 
 
