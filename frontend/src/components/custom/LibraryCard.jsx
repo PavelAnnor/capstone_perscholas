@@ -37,14 +37,16 @@ export default function LibraryCard({data}){
         <div className="absolute w-full bg-[black] bottom-0 z-5 min-h-[20%] p-3">
           <p>{data.title}</p>
           <div className="flex gap-1 items-center p-0">
-            <Link to = {url} className=" m-0">
+            <Link to={url} className=" m-0">
               <Button className="bg-[blue]" size="xs">
                 Access
               </Button>
             </Link>
-            <Button className="bg-[blue]" size="xs" onClick={handleDelete}>
-              Delete
-            </Button>
+            <Link>
+              <Button className="bg-[blue]" size="xs" onClick={handleDelete}>
+                Delete
+              </Button>
+            </Link>
           </div>
         </div>
       </article>

@@ -174,4 +174,34 @@ async function findLastRead(data) {
 }
 
 
-export {createUser,loginUser,createMangaSubmission,loadUserData,deleteMangaSubmission,findLastRead}
+async function createNotes(data) {
+
+  try {
+
+     const x = await fetch(`http://localhost:3000/manga-notes`, {
+       method: "POST",
+       headers: {
+         "Content-Type": "application/json",
+       },
+       body: JSON.stringify(data),
+     });
+
+     //if the request was bad, return false
+     if (!x.ok || x.length === 0) {
+       return false;
+     }
+     //if the request was good, parse the response to json so i can acess what the request sent back
+
+     return await x.json();
+    
+    
+  } catch (error) {
+
+    return false
+    
+  }
+  
+}
+
+
+export {createUser,loginUser,createMangaSubmission,loadUserData,deleteMangaSubmission,findLastRead,createNotes}

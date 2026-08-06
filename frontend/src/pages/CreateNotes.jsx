@@ -1,10 +1,12 @@
 
 import SectionWrapper from "../components/custom/SectionWrapper";
 import UserContext from "../context/userContext";
-import { useState,useRef,useContext,useEffect } from "react";
-import {useParams,useNavigate} from "react-router"
+import { useState, useRef, useContext, useEffect } from "react";
+import { useParams, useNavigate } from "react-router";
 import { Button } from "../components/ui/button.jsx";
 
+
+import TextEditor from "../components/custom/TextEditor.jsx";
 
 import ReactQuill from "react-quill-new";
 
@@ -21,7 +23,7 @@ export default function CreateNotes(){
 
 
     const {user} = useContext(UserContext)
-    const containerRef = useRef(null);
+   
    
 
     const params = useParams()
@@ -35,27 +37,18 @@ export default function CreateNotes(){
         }
     },[])
 
+    //pass the text editor the manga dex ID which it will need to send a post request 
+    //to the notes collection
     const managaDexId = params.mangaDexId;
 
 
    
-    function handleSubmit(){
-        console.log(containerRef.current.value)
-    }
+   
     
 
 
     return (
-      <SectionWrapper>
-        <main>
-          <div className="w-full  mb-5">
-            <p className="p-3 text-4xl bg-[blue] border-2 mb-2">Edit</p>
-            <Button size="lg" className="" onClick = {handleSubmit}>Save</Button>
-          </div>
-
-          <ReactQuill theme="snow"   ref={containerRef}/>
-        </main>
-      </SectionWrapper>
+      <TextEditor mediaId={managaDexId}></TextEditor>
     );
 
 }
