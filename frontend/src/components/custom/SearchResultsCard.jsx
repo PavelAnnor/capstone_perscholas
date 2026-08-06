@@ -5,11 +5,12 @@ import UserContext from "../../context/userContext.jsx";
 
 import {getMangaCoverArtFileName} from "../../util/mangaDexAPI.js"
 import {createMangaSubmission} from "../../util/database.js"
+import { loadUserData } from "../../util/database.js";
 
 
 export default function SearchResultsCard({data}){
 
-  const {user} = useContext(UserContext)
+  const {user,setMangaLibrary} = useContext(UserContext)
 
   //function that will asssemlbe all the info i need to send in a post request to 
   //add a submission
@@ -32,9 +33,17 @@ export default function SearchResultsCard({data}){
     
     const x = await createMangaSubmission(submission)
 
-    if(x){
-      //add logic to uda
+
+    //when I add a manga to user libray, get the updated data directkly from mongoDB
+    async function getUserData() {
+      const response = await loadUserData({
+        userId: user._id,
+      });
+
+      setMangaLibrary(response);
     }
+    getUserData();
+
 
 
   }

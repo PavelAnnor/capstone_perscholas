@@ -78,7 +78,7 @@ export default function MyContextProvider(props){
 
 
     return (
-      <UserContext.Provider value = {{user,setUser}}>
+      <UserContext.Provider value = {{user,setUser,mangaLibrary,setMangaLibrary}}>
         <ThemeContext.Provider
           value={{ colorTheme, setColorTheme, toggleColorTheme, bodyRef }}
         >
