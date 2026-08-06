@@ -10,13 +10,14 @@ export default function DashboardHeader() {
 
   const [lastRead,setLastRead] = useState({})
 
+
+  //on mount, make a call to the date base and get the manga that was most recently accsed, to display on the dashboard
   useEffect(()=>{
 
     async function getLast(){
 
      const x =  await findLastRead({userId:user._id})
      setLastRead(x[0])
-     console.log(x[0])
 
     }getLast()
   },[mangaLibrary])
@@ -37,16 +38,13 @@ export default function DashboardHeader() {
         </section>
 
         <section className="w-3/10 border-2 border-[#fbfbfb] flex flex-col">
-          <div className="border-b-2 flex w-full aspect-8/1 items-center">
-            <p className="pl-5 text-2xl">Pick Up Where You Left Off</p>
+          <div className="border-b-2 flex w-full aspect-8/1 items-center justify-center">
+            <p className="text-2xl text-center">Pick Up Where You Left Off</p>
           </div>
           <div className="w-full flex flex-1 justify-center p-2">
             <div className="bg-yellow-300 w-[60%] flex">
               <img src = {lastRead.cover} className="w-full"></img>
             </div>
-            {/* <div className="bg-[gray] w-[60%]">
-              <Button>Access</Button>
-            </div> */}
           </div>
         </section>
       </div>

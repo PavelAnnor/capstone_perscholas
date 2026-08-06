@@ -20,7 +20,8 @@ import { Route,Routes } from "react-router";
 
 //Importing any important data
 import { navbarLinks } from "./data/navbarLinks";
-;
+import CreateNotes from "./pages/CreateNotes.jsx";
+
 
 
 
@@ -33,6 +34,7 @@ function App() {
         <Route path="/login" element={<Login></Login>}></Route>
         <Route path="/register" element={<Register></Register>}> </Route>
         <Route path = "/search-manga" element={<SearchManga></SearchManga>}></Route>
+        <Route path = "/create-notes/:mangaDexId" element={<CreateNotes></CreateNotes>}></Route>
       </Routes>
     </MyContextProvider>
   );
