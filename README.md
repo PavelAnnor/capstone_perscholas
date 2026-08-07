@@ -37,9 +37,10 @@ Mongoose — Elegant MongoDB object modeling
 
 🔗 References Manga Dex API: https://api.mangadex.org/docs/
 
-Blockers 
+Blockers:
 Log In does not use JWT or BCRYPTJS so its not completley secure. 
-Minor DOM painting issues and incosistencies within the TextEditor component. Must his "BLANK DOCUMENT" twice to clear text inputs for a new document
+
+Minor DOM painting issues and incosistencies within the TextEditor component. Must his "BLANK DOCUMENT" twice to clear text inputs for a new document.
 
 
 Credit to Manga Dex @ https://api.mangadex.org/docs/ for providing free usage to their API for access to manga data
