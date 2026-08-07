@@ -1,5 +1,5 @@
 import { Button } from "../ui/button.jsx";
-import { deleteMangaSubmission, loadUserData } from "../../util/database.js";
+import { deleteMangaSubmission, loadUserData,deleteAllMangaNotes } from "../../util/database.js";
 import { useContext } from "react";
 import UserContext from "../../context/userContext.jsx"
 import { Link } from "react-router";
@@ -16,9 +16,11 @@ export default function LibraryCard({data}){
   async function handleDelete(){
 
    
-    const payload = {managDexId:data.id, userId:user._id}
+    const payload = {managDexId:data.mangaDexId, userId:user._id}
+   console.log(data)
 
     const x = await deleteMangaSubmission(data)
+    const y = await deleteAllMangaNotes(payload)
     
 
     async function getUserData() {

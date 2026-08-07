@@ -42,8 +42,8 @@ export default function DashboardHeader() {
             <p className="text-2xl text-center">Recently Added</p>
           </div>
           <div className="w-full flex flex-1 justify-center p-2">
-            <div className="bg-yellow-300 w-[60%] flex">
-              <img src = {lastRead.cover} className="w-full"></img>
+            <div className=" w-[60%] flex">
+              {lastRead && <img src={lastRead.cover} className="w-full"></img>}
             </div>
           </div>
         </section>

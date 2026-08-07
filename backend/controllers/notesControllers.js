@@ -37,6 +37,24 @@ async function deleteNote(req,res) {
 }
 
 
+async function deleteAllNotes(req,res) {
+
+
+     try {
+        const q = {
+            userId:req.body.userId,
+            mangaDexId:req.body.mangaDexId
+        }
+       const response = await NotesModel.deleteMany(q);
+       res.status(200).send(response);
+     } catch (error) {
+       res.status(400).send({ error: error.message });
+     }
+
+    
+}
+
+
 
 async function editNote(req,res) {
 
@@ -76,4 +94,4 @@ async function getAllNotes(req,res) {
 }
 
 
-export {createNote,getAllNotes,deleteNote,editNote}
+export {createNote,getAllNotes,deleteNote,editNote,deleteAllNotes}
