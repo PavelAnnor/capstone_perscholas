@@ -8,7 +8,7 @@ import ReactQuill from "react-quill-new";
 import "react-quill-new/dist/quill.snow.css";
 
 
-import { createNotes,deleteNote,getNotes } from "../../util/database.js";
+import { createNotes,deleteNote,getNotes,editNote } from "../../util/database.js";
 
 //Using this fucntion to remove the html tags from the title
 function stripHtml(html) {
@@ -66,9 +66,16 @@ export default function TextEditor({mediaId}) {
 
  //makes patch request, updating the notes instead of creating a new one
  async function handleSave() {
-
-
-    const response = await fetch(``)
+  console.log("were getting here")
+    const data = {
+      userId: user._id,
+      mangaDexId: mediaId,
+      title: notesContent.title,
+      content: notesContent.content,
+    };
+    console.log(data)
+    const response = await editNote(data)
+    console.log(response)
        const newNotes = await getNotes({ userId: user._id });
        setNotes(newNotes);
     
@@ -122,7 +129,7 @@ export default function TextEditor({mediaId}) {
               <div className="flex">
                 {notesContent.new === true && (
                   <Button size="lg" className="mt-5" onClick={handleCreate}>
-                    Create New
+                    Save New Document
                   </Button>
                 )}
                 {!notesContent.new && (
@@ -150,7 +157,7 @@ export default function TextEditor({mediaId}) {
                       setNotesContent({ title: "", content: "", new: true });
                     }}
                   >
-                    <p>Create New</p>
+                    <p>Black Document</p>
                   </div>
                
               )}
