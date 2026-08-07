@@ -10,7 +10,7 @@ import  UserContext  from "../../context/userContext.jsx"
 import UserContextWrapper from "../../context/userContext.jsx"
 
 
-import { loadUserData } from "../../util/database.js"
+import { loadUserData,getNotes } from "../../util/database.js"
 
 
 //A component that aggregates all context into one wrapper.
@@ -29,6 +29,7 @@ export default function MyContextProvider(props){
     const [user,setUser] = useState(null)
 
     const [mangaLibrary,setMangaLibrary] = useState([])
+    const [notes,setNotes] = useState([])
 
     
 
@@ -49,6 +50,9 @@ export default function MyContextProvider(props){
             });
 
             setMangaLibrary(response)
+
+            const newNotes = await getNotes({ userId: user._id });
+            setNotes(newNotes);
 
             
 
@@ -78,7 +82,7 @@ export default function MyContextProvider(props){
 
 
     return (
-      <UserContext.Provider value = {{user,setUser,mangaLibrary,setMangaLibrary}}>
+      <UserContext.Provider value = {{user,setUser,mangaLibrary,setMangaLibrary,notes,setNotes}}>
         <ThemeContext.Provider
           value={{ colorTheme, setColorTheme, toggleColorTheme, bodyRef }}
         >

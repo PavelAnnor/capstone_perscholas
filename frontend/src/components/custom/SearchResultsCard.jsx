@@ -12,6 +12,9 @@ export default function SearchResultsCard({data}){
 
   const {user,setMangaLibrary} = useContext(UserContext)
 
+
+  const e = extractMangaInfo(data);
+
   //function that will asssemlbe all the info i need to send in a post request to 
   //add a submission
   async function handleSubmission(){
@@ -20,6 +23,7 @@ export default function SearchResultsCard({data}){
     //have to make another call to the API to get a filename which is used in conjuctuion with manga id to get the cover art 
     //(really complciated for no reason)
     const fileName = await getMangaCoverArtFileName(e.cover_id)
+    console.log(e)
     const submission = {
       userId: user._id ,
       mangaDexId: e.id,
@@ -50,7 +54,7 @@ export default function SearchResultsCard({data}){
 
 
 
-    const e = extractMangaInfo(data)
+    
 
    
     
