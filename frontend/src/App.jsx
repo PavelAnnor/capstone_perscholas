@@ -13,6 +13,7 @@ import Home from "./pages/Home.jsx";
 import Login from "./pages/Login.jsx";
 import Register from "./pages/Register.jsx";
 import SearchManga from "./pages/SearchManga.jsx";
+import ComingSoon from "./pages/ComingSoon.jsx";
 
 //Node Module Imports
 import { Route,Routes } from "react-router";
@@ -35,6 +36,7 @@ function App() {
         <Route path="/register" element={<Register></Register>}> </Route>
         <Route path = "/search-manga" element={<SearchManga></SearchManga>}></Route>
         <Route path = "/create-notes/:mangaDexId" element={<CreateNotes></CreateNotes>}></Route>
+        <Route path = "/coming-soon" element={<ComingSoon></ComingSoon>}></Route>
       </Routes>
     </MyContextProvider>
   );

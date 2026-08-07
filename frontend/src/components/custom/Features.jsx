@@ -21,7 +21,7 @@ export default function Features(){
           Availabe Features
         </h1>
         <h2 className="text-xl text-[var(--text-color-primary)] ">
-          Disover all you can do with MangaDex
+          Disover all you can do with MangaLib
         </h2>
 
         <FeaturesGrid>
@@ -32,8 +32,8 @@ export default function Features(){
                 className="rounded-2xl p-2 bg-blue-400"
               ></UserRoundPen>
             }
-            header="Secure User Login"
-            desc="Reading lists, notes, and other created things will can be saved to user accounts"
+            header="Account Creation & Login"
+            desc="Create an account and log in to access your personal library and saved documents anytime."
           ></FeaturesGridCard>
 
           <FeaturesGridCard
@@ -43,8 +43,8 @@ export default function Features(){
                 className="rounded-2xl p-2 bg-[#fa0101]"
               ></Library>
             }
-            header="Creating Reading Lists"
-            desc="Reading lists can be created to keep track of progress. You can also add content you want to read to lists as part of a wishlist."
+            header="Library Creation"
+            desc="Add various official and unoffical titles to your library, to keep track of what you're reading."
           ></FeaturesGridCard>
 
           <FeaturesGridCard
@@ -55,7 +55,7 @@ export default function Features(){
               ></NotebookPen>
             }
             header="Generate Documents"
-            desc="Crate various note taking documents incluidng chapter summaries, volume notes, compendiums, and personal thoughts"
+            desc="Create, edit, and delete a variety of note-taking documents, including chapter summaries, volume notes, compendiums, and personal thoughts."
           ></FeaturesGridCard>
         </FeaturesGrid>
       </SectionWrapper>

@@ -39,7 +39,7 @@ export default function DashboardHeader() {
 
         <section className="w-3/10 border-2 border-[#fbfbfb] flex flex-col">
           <div className="border-b-2 flex w-full aspect-8/1 items-center justify-center">
-            <p className="text-2xl text-center">Pick Up Where You Left Off</p>
+            <p className="text-2xl text-center">Recently Added</p>
           </div>
           <div className="w-full flex flex-1 justify-center p-2">
             <div className="bg-yellow-300 w-[60%] flex">

@@ -34,7 +34,7 @@ export default function Navbar({links}){
       <nav className=" w-full h-[12vh]  flex  justify-between pl-10 pr-10 z-50 text-[var(--text-color-primary)] bg-[var(--bg-primary)] border-b-1 ">
         <div className="flex h-full flex items-center gap-5 ">
           <Link to = "/">
-            <h1>MANGA DEX </h1>
+            <h1>MANGA LIB </h1>
           </Link>
           {links.map((l) => (
             <Link to={l.href} className="" key={l.text}>

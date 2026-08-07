@@ -3,6 +3,8 @@ import { useContext } from "react";
 import ThemeContext from "../../context/themeContext.js";
 import UserContext from "../../context/userContext.jsx";
 
+import { Link } from "react-router";
+
 
 
 import SectionWrapper from "./SectionWrapper.jsx";
@@ -22,16 +24,18 @@ export default function Hero() {
               Your Second Brain
             </h1>
             <h2 className="text-3xl text-[var(--text-color-primary)]">
-              Create reading lists, notes, and track progress, all in one
-              cnetralized application.
+              Create libraries, notes, and track progress, all in one
+              centralized application.
             </h2>
             {!user && (
-              <Button
-                className="mt-5 text-white bg-[var(--bg-button-blue-primary)]"
-                size="lg"
-              >
-                Get Started
-              </Button>
+              <Link to = "/register">
+                <Button
+                  className="mt-5 text-white bg-[var(--bg-button-blue-primary)]"
+                  size="lg"
+                >
+                  Get Started
+                </Button>
+              </Link>
             )}
           </div>
         </section>
