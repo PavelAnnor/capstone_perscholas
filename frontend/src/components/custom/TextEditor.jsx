@@ -117,7 +117,7 @@ export default function TextEditor({ mediaId }) {
 
             <p>Title</p>
             <input
-              className="w-full mb-10 border-2"
+              className="w-full mb-10 border-2 p-3"
               ref={titleRef}
               defaultValue={notesContent.title}
             ></input>
@@ -147,9 +147,9 @@ export default function TextEditor({ mediaId }) {
           </div>
         </section>
 
-        <section className="w-2/10 border-green-600 border-2">
+        <section className="w-2/10  border-2">
           <p className="p-3 text-2xl bg-[blue] border-2 ">Saved Notes</p>
-          <div className="w-full  h-[50vh] overflow-y-auto">
+          <div className="w-full   overflow-y-auto">
             {mappedNotes.length != 0 && (
               <div
                 className="text-center border p-2 bg-blue-400"
