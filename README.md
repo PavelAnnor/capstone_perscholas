@@ -13,15 +13,21 @@ An React full stack application that serves as a reading companion for manga. Su
 
 Front End
 React.js — Modern UI framework with hooks and context
+
 Vite — Fast build tool and development server
+
 Tailwind CSS — Utility-first CSS framework
+
 ReactQuill - Rich Text Editor used for note/document creation and editing
 
 
 BackEnd
 Node.js — Server-side JavaScript runtime
+
 Express.js — Minimal and flexible web application framework
+
 MongoDB — NoSQL database for storing users, notes, and mangaSubmissions
+
 Mongoose — Elegant MongoDB object modeling
 
 
