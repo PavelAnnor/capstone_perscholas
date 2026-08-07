@@ -141,37 +141,149 @@ async function loadUserData(data){
 }
 
 
-// async function findLastRead(data) {
+async function findLastRead(data) {
 
 
-//   try {
+  try {
 
-//     const x = await fetch(
-//       `http://localhost:3000/manga-submission/getAllMangaPosts`,
-//       {
-//         method: "POST",
-//         headers: {
-//           "Content-Type": "application/json",
-//         },
-//         body: JSON.stringify(data),
-//       },
-//     );
+    const x = await fetch(
+      `http://localhost:3000/manga-submission/get-last-read`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      },
+    );
 
-//     //if the request was bad, return false
-//     if (!x.ok || x.length === 0) {
-//       return false;
-//     }
-//     //if the request was good, parse the response to json so i can acess what the request sent back
+    //if the request was bad, return false
+    if (!x.ok || x.length === 0) {
+      return false;
+    }
+    //if the request was good, parse the response to json so i can acess what the request sent back
 
-//     return await x.json();
+    return await x.json();
     
-//   } catch (error) {
+  } catch (error) {
 
-//     return false
+    return false
     
-//   }
+  }
   
-// }
+}
 
 
-export {createUser,loginUser,createMangaSubmission,loadUserData,deleteMangaSubmission}
+async function createNotes(data) {
+
+  try {
+
+     const x = await fetch(`http://localhost:3000/manga-notes`, {
+       method: "POST",
+       headers: {
+         "Content-Type": "application/json",
+       },
+       body: JSON.stringify(data),
+     });
+
+     //if the request was bad, return false
+     if (!x.ok || x.length === 0) {
+       return false;
+     }
+     //if the request was good, parse the response to json so i can acess what the request sent back
+
+     return await x.json();
+    
+    
+  } catch (error) {
+
+    return false
+    
+  }
+  
+}
+
+
+async function getNotes(data) {
+
+
+try {
+  const response = await fetch(
+    `http://localhost:3000/manga-notes/get-all-notes`,
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    },
+  );
+
+  //if the request was bad, return false
+  if (!response.ok ) {
+    return false;
+  }
+  //if the request was good, parse the response to json so i can acess what the request sent back
+
+  return await response.json();
+} catch (error) {
+  
+}
+  
+}
+
+
+async function deleteNote(data){
+
+  try {
+    
+    const response = await fetch(`http://localhost:3000/manga-notes`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    })
+
+    if (!response.ok) {
+      return false;
+    }
+    //if the request was good, parse the response to json so i can acess what the request sent back
+
+    return await response.json();
+  } catch (error) {
+    
+  }
+
+  
+
+}
+
+
+async function editNote(data){
+
+  console.log("wehre gerring to database.js too")
+   try {
+     const response = await fetch(`http://localhost:3000/manga-notes`, {
+       method: "PATCH",
+       headers: {
+         "Content-Type": "application/json",
+       },
+       body: JSON.stringify(data),
+     });
+
+     if (!response.ok) {
+       return false;
+     }
+     //if the request was good, parse the response to json so i can acess what the request sent back
+
+     return await response.json();
+   } catch (error) {}
+
+
+
+
+}
+
+
+export {createUser,loginUser,createMangaSubmission,loadUserData,deleteMangaSubmission,findLastRead,createNotes,getNotes,deleteNote,editNote}

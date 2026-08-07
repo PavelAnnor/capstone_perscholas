@@ -22,8 +22,8 @@ async function getUserSubmissions(req,res){
 
     try {
         const response = await MangaSubmissionModel.find({
-          userId: req.body.userId
-        });
+          userId: req.body.userId,
+        }).sort({ lastRead: -1 });
         res.status(200).send(response)
         
     } catch (error) {
@@ -52,6 +52,28 @@ async function deleteMangaPost(req,res) {
 }
 
 
+async function getLastRead(req,res) {
+
+    try {
+        const response =await MangaSubmissionModel
+          .find({
+            userId: req.body.userId,
+          })
+          .sort({ lastRead: -1 })
+          .limit(1);
+
+           res.status(200).send(response);
+       
+
+    } catch (error) {
+
+         res.status(400).send({error:error.message});
+        
+    }
+    
+}
 
 
-export {createSubmission,getUserSubmissions,deleteMangaPost}
+
+
+export {createSubmission,getUserSubmissions,deleteMangaPost,getLastRead}
