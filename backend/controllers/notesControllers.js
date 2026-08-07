@@ -22,6 +22,17 @@ async function createNote(req,res) {
 
 
 async function deleteNote(req,res) {
+
+    try {
+
+        const response = await NotesModel.findOneAndDelete(req.body)
+        res.status(200).send(response);
+        
+    } catch (error) {
+
+         res.status(400).send({ error: error.message });
+        
+    }
     
 }
 
@@ -48,4 +59,4 @@ async function getAllNotes(req,res) {
 }
 
 
-export {createNote,getAllNotes}
+export {createNote,getAllNotes,deleteNote}

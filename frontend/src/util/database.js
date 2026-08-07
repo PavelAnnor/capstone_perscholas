@@ -233,4 +233,31 @@ try {
 }
 
 
-export {createUser,loginUser,createMangaSubmission,loadUserData,deleteMangaSubmission,findLastRead,createNotes,getNotes}
+async function deleteNote(data){
+
+  try {
+    
+    const response = await fetch(`http://localhost:3000/manga-notes`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    })
+
+    if (!response.ok) {
+      return false;
+    }
+    //if the request was good, parse the response to json so i can acess what the request sent back
+
+    return await response.json();
+  } catch (error) {
+    
+  }
+
+  
+
+}
+
+
+export {createUser,loginUser,createMangaSubmission,loadUserData,deleteMangaSubmission,findLastRead,createNotes,getNotes,deleteNote}
