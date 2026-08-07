@@ -111,7 +111,9 @@ export default function TextEditor({ mediaId }) {
       <main className="flex gap-3">
         <section className="w-8/10 ">
           <div className="w-full  mb-5">
-            <p className="p-3 text-2xl bg-[blue] border-2 mb-5">Edit</p>
+            <p className="p-3 text-3xl bg-[blue] border-2 mb-5 h-[15vh] flex items-center">
+              Edit
+            </p>
 
             <p>Title</p>
             <input
@@ -145,8 +147,12 @@ export default function TextEditor({ mediaId }) {
           </div>
         </section>
 
-        <section className="w-2/10  border-2">
-          <p className="p-3 text-2xl bg-[blue] border-2 ">Saved Notes</p>
+        <section className="w-2/10  border-2 ">
+          <div className="flex bg-[blue] border-2 flex-col h-[15vh]">
+            <img className="w-full h-full" src="/lib.jpg "></img>
+            {/* <p className="pl-3 flex items-center  h-3/10 ">Saved Notes</p> */}
+          </div>
+
           <div className="w-full   overflow-y-auto">
             {mappedNotes.length != 0 && (
               <div
