@@ -2,6 +2,7 @@ import NotesModel from "../models/notesModel.js";
 
 
 
+//Function to create a document in the notes collection 
 async function createNote(req,res) {
 
     try {
@@ -20,7 +21,7 @@ async function createNote(req,res) {
 
 
 
-
+//Function to delte a document in the notes collection 
 async function deleteNote(req,res) {
 
     try {
@@ -36,7 +37,9 @@ async function deleteNote(req,res) {
     
 }
 
-
+//Function to create delte all documents associated with a specifc user and manga in the notes collection 
+//BLOCKER: Doesnt work fully yet, for some reason there is an issue with the mangaDexID when a note component renders
+//Not really a HUGE issue, it just leaves some bad data in the database
 async function deleteAllNotes(req,res) {
 
 
@@ -55,7 +58,7 @@ async function deleteAllNotes(req,res) {
 }
 
 
-
+//fucntion to edit a note document
 async function editNote(req,res) {
 
 
@@ -77,7 +80,7 @@ async function editNote(req,res) {
     
 }
 
-
+//fucntion to get all notes associated with a user
 async function getAllNotes(req,res) {
 
     try {

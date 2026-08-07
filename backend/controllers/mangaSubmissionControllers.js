@@ -4,7 +4,7 @@ import MangaSubmissionModel from "../models/mangaSubmissionModel.js";
 
 
 
-
+//function to create a manag submission
 async function createSubmission(req, res) {
   try {
     const response = await MangaSubmissionModel.create(req.body);
@@ -16,7 +16,7 @@ async function createSubmission(req, res) {
 }
 
 
-
+//fucntion to get the manag lirbary for a user
 async function getUserSubmissions(req,res){
 
 
@@ -36,7 +36,7 @@ async function getUserSubmissions(req,res){
 }
 
 
-//Function that deletes a manga post AND any associated Notes in the notes collection 
+//Function that deletes a manga post 
 async function deleteMangaPost(req,res) {
 
     try {
@@ -54,7 +54,7 @@ async function deleteMangaPost(req,res) {
     
 }
 
-
+//function to find which manga was access tot most recently
 async function getLastRead(req,res) {
 
     try {

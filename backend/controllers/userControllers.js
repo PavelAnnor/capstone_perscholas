@@ -49,7 +49,7 @@ async function createUser(req,res) {
     
 }
 
-
+//funtion to get information associated with a user
 async function getUser(req,res) {
 
     try {

@@ -113,8 +113,6 @@ export default function TextEditor({ mediaId }) {
           <div className="w-full  mb-5">
             <p className="p-3 text-2xl bg-[blue] border-2 mb-5">Edit</p>
 
-           
-
             <p>Title</p>
             <input
               className="w-full mb-10 border-2 p-3"
@@ -152,12 +150,12 @@ export default function TextEditor({ mediaId }) {
           <div className="w-full   overflow-y-auto">
             {mappedNotes.length != 0 && (
               <div
-                className="text-center border p-2 bg-blue-400"
+                className="text-center border p-2 bg-blue-400 hover:bg-[purple]"
                 onClick={() => {
                   setNotesContent({ title: "", content: "", new: true });
                 }}
               >
-                <p>Black Document</p>
+                <p>Blank Document</p>
               </div>
             )}
 
@@ -184,7 +182,10 @@ function NotesItem({data,setContent}){
      }
 
     return (
-      <div className="text-center border p-2" onClick={handleClick} >
+      <div
+        className="text-center border p-2 hover:bg-[#0571f4]"
+        onClick={handleClick}
+      >
         <p>{data.title}</p>
       </div>
     );
