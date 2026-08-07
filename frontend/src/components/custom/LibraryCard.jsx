@@ -9,6 +9,8 @@ export default function LibraryCard({data}){
   const {user,setMangaLibrary} = useContext(UserContext)
 
   const url = `/create-notes/${data._id}`
+
+  
   
 
 
@@ -17,7 +19,7 @@ export default function LibraryCard({data}){
 
    
     const payload = {managDexId:data.mangaDexId, userId:user._id}
-   console.log(data)
+   
 
     const x = await deleteMangaSubmission(data)
     const y = await deleteAllMangaNotes(payload)
@@ -33,6 +35,9 @@ export default function LibraryCard({data}){
     getUserData();
   }
 
+
+  const readurl = `https://mangadex.org/title/${data.mangaDexId}`;
+
     return (
       <article className="col-span-1 aspect-auto  flex aspect-auto relative border-1">
         <img src={data.cover} className="w-full"></img>
@@ -45,8 +50,13 @@ export default function LibraryCard({data}){
               </Button>
             </Link>
             <Link>
-              <Button className="bg-[blue]" size="xs" onClick={handleDelete}>
+              <Button className="bg-[#800303]" size="xs" onClick={handleDelete}>
                 Delete
+              </Button>
+            </Link>
+            <Link to={readurl} target="_blank">
+              <Button className="bg-[#4e0487]" size="xs">
+                Read
               </Button>
             </Link>
           </div>

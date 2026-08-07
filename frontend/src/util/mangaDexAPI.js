@@ -109,7 +109,6 @@ async function getMangaCoverArtFileName(cover_id){
         const response = await fetch(url);
         const result = await response.json();
         const data = result.data.attributes.fileName
-        console.log(data)
         return data
     } catch (error) {
 

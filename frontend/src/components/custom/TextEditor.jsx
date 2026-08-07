@@ -43,7 +43,7 @@ export default function TextEditor({ mediaId }) {
   }, [notesContent.title]);
 
   const filteredNotes = notes.filter((n) => n.mangaDexId === mediaId);
-  console.log(filteredNotes);
+  
   const mappedNotes = filteredNotes.map((n) => (
     <NotesItem data={n} key={n._id} setContent={setNotesContent}></NotesItem>
   ));
@@ -109,9 +109,9 @@ export default function TextEditor({ mediaId }) {
   return (
     <SectionWrapper>
       <main className="flex gap-3">
-        <section className="w-8/10 ">
+        <section className="w-7/10 ">
           <div className="w-full  mb-5">
-            <p className="p-3 text-3xl bg-[blue] border-2 mb-5 h-[15vh] flex items-center">
+            <p className="p-3 text-3xl bg-[blue] border-2 mb-5 h-[20vh] flex items-center">
               Edit
             </p>
 
@@ -147,8 +147,8 @@ export default function TextEditor({ mediaId }) {
           </div>
         </section>
 
-        <section className="w-2/10  border-2 ">
-          <div className="flex bg-[blue] border-2 flex-col h-[15vh]">
+        <section className="w-3/10  border-2 ">
+          <div className="flex bg-[blue] border-2 flex-col h-[20vh]">
             <img className="w-full h-full" src="/lib.jpg "></img>
             {/* <p className="pl-3 flex items-center  h-3/10 ">Saved Notes</p> */}
           </div>

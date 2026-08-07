@@ -28,7 +28,7 @@ export default function DashboardHeader() {
   return (
     <SectionWrapper>
       <div className="w-full flex gap-5   ">
-        <section className=" border-2 border-[#fbfbfb] rounded w-7/10 ">
+        <section className=" border-2 border-[#fbfbfb] rounded w-70/100 ">
           <div className="flex border w-full ">
             <img className="w-full aspect-3/1" src="./test3.jpg"></img>
           </div>
@@ -37,7 +37,7 @@ export default function DashboardHeader() {
           </div>
         </section>
 
-        <section className="w-3/10 border-2 border-[#fbfbfb] flex flex-col">
+        <section className="w-30/100 border-2 border-[#fbfbfb] flex flex-col">
           <div className="border-b-2 flex w-full aspect-8/1 items-center justify-center">
             <p className="text-2xl text-center">Recently Added</p>
           </div>

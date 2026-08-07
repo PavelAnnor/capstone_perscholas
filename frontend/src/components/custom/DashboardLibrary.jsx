@@ -11,7 +11,7 @@ export default function DashboardLibrary(){
 
   const { user, mangaLibrary, setMangaLibrary } = useContext(UserContext);
 
-  console.log(mangaLibrary)
+ 
 
   const mappedLibrary = mangaLibrary.map(m=><LibraryCard data = {m}></LibraryCard>)
 
