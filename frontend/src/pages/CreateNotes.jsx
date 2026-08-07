@@ -1,6 +1,6 @@
 
-import SectionWrapper from "../components/custom/SectionWrapper";
-import UserContext from "../context/userContext";
+import SectionWrapper from "../components/custom/SectionWrapper.jsx";
+import UserContext from "../context/userContext.jsx";
 import { useState, useRef, useContext, useEffect } from "react";
 import { useParams, useNavigate } from "react-router";
 import { Button } from "../components/ui/button.jsx";

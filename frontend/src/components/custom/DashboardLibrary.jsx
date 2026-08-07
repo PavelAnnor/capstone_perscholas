@@ -1,6 +1,6 @@
-import SectionWrapper from "./SectionWrapper";
+import SectionWrapper from "./SectionWrapper.jsx";
 import { useContext } from "react";
-import UserContext from "../../context/userContext";
+import UserContext from "../../context/userContext.jsx";
 
 
 import LibraryCard from "./LibraryCard.jsx";

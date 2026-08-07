@@ -1,5 +1,5 @@
 import { useContext ,useRef} from "react"
-import ThemeContext from "../../context/themeContext"
+import ThemeContext from "../../context/themeContext.js"
 import UserContext from "../../context/userContext.jsx";
 import {Button} from "../ui/button.jsx"
 import { Switch } from "@/components/ui/switch";

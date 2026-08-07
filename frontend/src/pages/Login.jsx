@@ -1,4 +1,4 @@
-import SectionWrapper from "../components/custom/SectionWrapper"
+import SectionWrapper from "../components/custom/SectionWrapper.jsx"
 
 import LoginForm from "../components/custom/LoginForm.jsx";
 
