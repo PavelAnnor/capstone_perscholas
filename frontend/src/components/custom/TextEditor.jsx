@@ -71,7 +71,7 @@ export default function TextEditor({ mediaId }) {
 
   //makes patch request, updating the notes instead of creating a new one
   async function handleSave() {
-    console.log("were getting here");
+   
     const data = {
       userId: user._id,
       mangaDexId: mediaId,

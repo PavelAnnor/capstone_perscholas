@@ -32,7 +32,7 @@ Mongoose — Elegant MongoDB object modeling
 
 
 
-💡 Notes Deployed on Netlify @: https://multi-meals.onrender.com/
+💡 Notes Deployed on Netlify @: 
 
 
 🔗 References Manga Dex API: https://api.mangadex.org/docs/
