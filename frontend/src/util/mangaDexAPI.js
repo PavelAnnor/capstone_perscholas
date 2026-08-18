@@ -1,45 +1,37 @@
 //An async function to make a request to mangaDex api, that returns array of manag objects for managa matching a certain title
 //Will be used for search logic
+
+const BASE_URL = import.meta.env.VITE_BASE_URL;
 async function getManga(title) {
 
     try {
-
-
-        if(!title)
-            return []
-         const url = `https://api.mangadex.org/manga?title=${title}`;
-         const response = await fetch(url);
-         const result = await response.json();
-         const data = result.data
-
-        if(data.length===0){
-            return []
-        }
-         return data;
+        const response = await fetch(`${BASE_URL}/manga-dex/search-manga/${title}`) 
+        const result = await response.json();
+        return (result)
         
     } catch (error) {
-
-        return [];
-        
-    }  
+         return [];  
+    }
 }
 
 //Function to return one Mnaga object by id.
 //Gets data specifically for ONE manga
 async function getOneManga(id) {
-  try {
-    const url = `https://api.mangadex.org/manga/${id}`;
-    const response = await fetch(url);
-    const result = await response.json();
-    const data = result.data;
 
-    if (data.length === 0) {
-      return false;
-    }
-    console.log(data);
-    return data;
+  try {
+     const response = await fetch(
+       `${BASE_URL}/manga-dex/search-one-manga/${id}`,
+     );
+     const result = await response.json();
+      if (result.length === 0) {
+        return false;
+      }
+     return result;
+    
   } catch (error) {
+
     return false;
+    
   }
 }
 
@@ -101,23 +93,20 @@ function extractCoverID(mangaObject){
 
 
 //Async Helper function to return the file name for a manga cover
-async function getMangaCoverArtFileName(cover_id){
-
-    try {
-        
-        const url = `https://api.mangadex.org/cover/${cover_id}`;
-        const response = await fetch(url);
-        const result = await response.json();
-        const data = result.data.attributes.fileName
-        return data
-    } catch (error) {
-
-        return false
-        
-    }
-    
+async function getMangaCoverArtFileName(coverId) {
+  try {
+    const response = await fetch(
+      `${BASE_URL}/manga-dex/manga-cover-art/${coverId}`,
+    );
+    const raw = await response.text();
+    console.log("RAW RESPONSE:", JSON.stringify(raw)); // see exact bytes/characters
+    const result = JSON.parse(raw);
+    return result;
+  } catch (error) {
+    console.log(error);
+    return false;
+  }
 }
-
 //Helper Function that gets me the image url for a manga cover
 function getMangaCoverArt(mangaId, fileName){
     

@@ -16,7 +16,7 @@ import SectionWrapper from "../components/custom/SectionWrapper.jsx"
 export default function SearchManga(){
 
     const [searchResults, setSearchResults] = useState([])
-    const [value, setValue] = useState()
+    const [value, setValue] = useState("bleach")
 
 
     const timerRef = useRef(null);

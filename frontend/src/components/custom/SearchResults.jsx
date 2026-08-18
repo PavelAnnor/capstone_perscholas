@@ -22,7 +22,7 @@ export default function SearchResults({searchResults}){
 
 
     //if we get no results, just return an h2 saying we got nothing
-    if(searchResults.length===0)
+    if(searchResults.length===0 || !searchResults)
         return <h2 className="text-6xl text-center text-[#ffffff]">No Results....</h2>;
 
    //Map all of the data to a card I can display

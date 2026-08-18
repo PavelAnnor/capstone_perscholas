@@ -12,6 +12,7 @@ import UserModel from "./models/userModel.js"
 import userRoutes from "./routes/userRoutes.js"
 import mangaSubmissionRoutes from "./routes/mangaSubmissionRoutes.js"
 import notesRoutes from "./routes/noteRoutes.js"
+import mangaDexAPIRoutes from "./routes/mangadexAPIRoutes.js"
 
 const app = express()
 const PORT = process.env.PORT || 3000;
@@ -44,6 +45,7 @@ app.use((req, res, next) => {
 app.use("/users",userRoutes)
 app.use("/manga-submission",mangaSubmissionRoutes)
 app.use("/manga-notes",notesRoutes)
+app.use("/manga-dex",mangaDexAPIRoutes)
 
 
 
