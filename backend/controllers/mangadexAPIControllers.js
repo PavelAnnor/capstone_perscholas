@@ -8,11 +8,11 @@ async function getManga(req,res) {
     const data = result.data;
 
     if (data.length === 0) {
-      res.send([]);
+      res.status(400).send([]);
     }
-    res.send(data);
+    res.status(200).send(data);
   } catch (error) {
-    res.send([]);
+    res.status(400).send([]);
   }
 }
 
